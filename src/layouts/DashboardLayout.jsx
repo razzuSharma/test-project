@@ -5,10 +5,8 @@ import { Link } from "react-router-dom";
 const DashboardLayout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
- 
   return (
     <div className="flex h-screen overflow-hidden bg-gray-100">
-     {/* Sidebar */}
       <aside
         className={`fixed inset-y-0 left-0 z-30 w-64 bg-gray-900 text-white transition-transform duration-300 ease-in-out
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -35,7 +33,6 @@ const DashboardLayout = ({ children }) => {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col overflow-auto">
-        {/* Top bar for mobile */}
         <div className="md:hidden p-3 bg-gray-900 text-white flex justify-between items-center sticky top-0 z-20">
           <h1 className="text-xl font-bold">Dashboard</h1>
           <button
@@ -46,7 +43,6 @@ const DashboardLayout = ({ children }) => {
           </button>
         </div>
 
-        {/* Content container - removed max-width constraint */}
         <main className="flex-1 p-4 sm:p-6">
           <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 h-full">
             {children || <div> No content</div>}
